@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>वार्षिक परीक्षा परिणाम - Govt. Sandipani Model HS School Ashok Nagar</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    header h1 {
+      display: inline-block;
+      font-size: 24px;
+      margin: 0;
+      vertical-align: middle;
+    }
+    main {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 12px;
+      width: 280px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      text-align: center;
+    }
+    button {
+      padding: 12px 25px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .error {
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+    .contact {
+      margin-top: 40px;
+      font-size: 15px;
+      color: #2c3e50;
+      background: #eaf2f8;
+      padding: 15px;
+      border-radius: 6px;
+      display: inline-block;
+      text-align: left;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function goToResult() {
+      const rollNoInput = document.getElementById("rollNo");
+      const rollNo = rollNoInput.value.trim(); // trim spaces
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!rollNo) {
+        errorMsg.textContent = "कृपया अपना रोल नंबर दर्ज करें।";
+        rollNoInput.style.border = "2px solid red";
+        return;
+      }
+
+      if (!/^\d+$/.test(rollNo)) {
+        errorMsg.textContent = "रोल नंबर में केवल अंक (digits) होने चाहिए, अक्षर या अन्य चिन्ह मान्य नहीं हैं।";
+        rollNoInput.style.border = "2px solid red";
+        return;
+      }
+
+      if (!(rollNo.length === 13 || rollNo.length === 14)) {
+        errorMsg.textContent = "रोल नंबर कक्षा 09 के लिये 13 अंकों का एवं कक्षा 11 के लिये 14 अंकों का होना चाहिए।";
+        rollNoInput.style.border = "2px solid red";
+        return;
+      }
+
+      errorMsg.textContent = "";
+      rollNoInput.style.border = "1px solid #ccc";
+      const baseUrl = "https://ems.educationportal3.in/public/marksheet/";
+      const finalUrl = baseUrl + rollNo;
+      window.open(finalUrl, "_blank");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="School Logo">
+    <h1>GOVT. SANDIPANI MODEL HS SCHOOL ASHOK NAGAR</h1>
+  </header>
+  
+  <main>
+    <h2>Class 09 & 11 Annual Exam Result 2025-26</h2>
+    <h2>कक्षा 09 एवं 11 वार्षिक परीक्षा परिणाम 2025-26</h2>
+    <p>Enter Your Roll Number As per Admit Card provided by the school to see the result :</p>
+    <p>परिणाम देखने के लिए, स्कूल द्वारा दिए गए एडमिट कार्ड के अनुसार अपना रोल नंबर दर्ज करें:</p>
+    
+    <input type="text" id="rollNo" placeholder="रोल नंबर (13 या 14 अंक)" inputmode="numeric" pattern="[0-9]*">
+    <br>
+    <button onclick="goToResult()">परिणाम देखें</button>
+    <div id="errorMsg" class="error"></div>
+
+    <div class="contact">
+      <strong>समस्या होने पर विद्यालय में संपर्क करें:</strong><br>
+      Contact Person: Mr. Ashish Namdev
+    </div>
+  </main>
+  
+  <footer>
+    © 2026 Ashish Namdev
+  </footer>
+</body>
+</html>
