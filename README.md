@@ -19,7 +19,7 @@ It is published using **GitHub Pages** and allows students to check their exam r
 
 ## 📖 How to Use
 1. Visit the hosted site:  
-   `https://<your-username>.github.io/exam-results/`
+   `https://ashishnamdev.github.io/exam-result/`
 2. Enter your roll number (13 or 14 digits only).
 3. Click **"परिणाम देखें"** (View Result).
 4. You will be redirected to the official exam results page.
